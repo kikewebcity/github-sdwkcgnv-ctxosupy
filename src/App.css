@@ -1,100 +1,423 @@
-import React from 'react';
-import './App.css';
+:root {
+  --font-main: 'Teko', sans-serif;
+  --color-green: #388e3c;
+  --color-dark: #1a1a1a;
+  --color-light: #f4f4f4;
+}
 
-const Nosotros = () => {
-  return (
-    <div className="nosotros-pagina">
-      
-      <section className="nosotros-banner-verde">
-        <div className="nosotros-banner-contenido">
-          <img src="/logo-blanco.png" alt="Logo Bricko Blanco" className="nosotros-logo-centro" />
-          <p className="nosotros-banner-texto">
-            Nuestro slogan, La Revolución Ecológica en Construcción, encapsula nuestra misión de transformar la industria mediante prácticas innovadoras y productos eco amigables. En Bricko, estamos comprometidos a liderar un cambio hacia métodos de construcción más sostenibles y responsables con el medio ambiente.
-          </p>
-        </div>
-      </section>
+/* RESET Y ESTRUCTURA GLOBAL */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: white;
+  color: var(--color-dark);
+  overflow-x: hidden; 
+}
 
-      <section className="nosotros-zigzag-contenedor">
-        
-        <div className="zigzag-fila">
-          <div className="zigzag-texto">
-            <p className="zigzag-parrafo">
-              <strong>Somos una empresa 100% mexicana</strong>, se distingue como una marca dedicada a la fabricación de productos innovadores para la construcción sostenible.
-            </p>
-            <p className="zigzag-parrafo">
-              Nuestro principal producto, Bloques ecológicos, redefine los estándares de la industria al incorporar materiales reciclados y técnicas avanzadas de producción.
-            </p>
-          </div>
-          <div className="zigzag-imagen">
-            <img src="/detalleladrillo.png" alt="Detalle Ladrillo Bricko" />
-          </div>
-        </div>
+h1, h2, h3 {
+  font-family: var(--font-main);
+  text-transform: uppercase;
+}
 
-        <div className="zigzag-fila reversa">
-          <div className="zigzag-texto">
-            <p className="zigzag-parrafo">
-              <strong>Misión.</strong> Ofrecer una alternativa en el ámbito de la construcción, que ayude a resolver el problema ambiental de residuos sólidos y evitar el agotamiento de los recursos naturales.
-            </p>
-            <p className="zigzag-parrafo">
-              <strong>Visión.</strong> Ser un referente en la industria de la construcción sustentable, con base en criterios de la economía circular.
-            </p>
-          </div>
-          <div className="zigzag-imagen">
-            <img src="/muroderecamara.png" alt="Muro de recámara Bricko" />
-          </div>
-        </div>
+.main-container {
+  width: 100%;
+  position: relative;
+}
 
-      </section>
+/* NAVBAR Y TOPBAR (Identidad Nueva) */
+.top-bar {
+  background-color: var(--color-green);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0;
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
 
-      <section className="nosotros-pilares-contenedor">
-        <div className="pilar-tarjeta">
-          <div className="pilar-icono">
-            <svg viewBox="0 0 24 24" width="40" height="40" stroke="#388e3c" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
-              <path d="M2 22 11 20"></path>
-            </svg>
-          </div>
-          <h4 className="pilar-subtitulo">Misión</h4>
-          <h2 className="pilar-titulo">TRANSFORMAR</h2>
-          <p className="pilar-texto">
-            Somos Bricko. Transformamos desechos de papel en arquitectura de vanguardia mediante ingeniería patentada.
-          </p>
-        </div>
+.barra-navegacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #eaeded;
+}
 
-        <div className="pilar-tarjeta">
-          <div className="pilar-icono">
-            <svg viewBox="0 0 24 24" width="40" height="40" stroke="#388e3c" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-              <polyline points="17 6 23 6 23 12"></polyline>
-            </svg>
-          </div>
-          <h4 className="pilar-subtitulo">Visión</h4>
-          <h2 className="pilar-titulo">LIDERAR</h2>
-          <p className="pilar-texto">
-            Ser la referencia mundial en arquitectura sostenible, demostrando que la economía circular es el único camino viable para el futuro de la construcción.
-          </p>
-        </div>
+.logo-img {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+  /* El filtro vuelve el logo verde para fondo blanco */
+  filter: brightness(0) saturate(100%) invert(29%) sepia(85%) saturate(1637%) hue-rotate(97deg) brightness(97%) contrast(105%);
+}
 
-        <div className="pilar-tarjeta">
-          <div className="pilar-icono">
-            <svg viewBox="0 0 24 24" width="40" height="40" stroke="#388e3c" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-              <line x1="12" y1="22.08" x2="12" y2="12"></line>
-            </svg>
-          </div>
-          <h4 className="pilar-subtitulo">Valores</h4>
-          <h2 className="pilar-titulo">INNOVAR</h2>
-          <p className="pilar-texto">
-            <strong>Innovación:</strong> Cuestionamos lo establecido.<br/><br/>
-            <strong>Sostenibilidad:</strong> El planeta es primero.<br/><br/>
-            <strong>Calidad:</strong> Seguridad sin compromisos.
-          </p>
-        </div>
-      </section>
+.enlaces-navegacion {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
 
-    </div>
-  );
-};
+.enlaces-navegacion li {
+  color: var(--color-green);
+  font-family: var(--font-main);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  position: relative;
+}
 
-export default Nosotros;
+.enlaces-navegacion li.active-link {
+  border-bottom: 2px solid var(--color-green);
+}
+
+.iconos-navegacion {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: var(--color-green);
+}
+
+.boton-icono { cursor: pointer; }
+
+.contenedor-buscador {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.entrada-buscador {
+  width: 0;
+  opacity: 0;
+  border: none;
+  border-bottom: 2px solid var(--color-green);
+  transition: all 0.4s ease;
+  position: absolute;
+  right: 35px;
+}
+
+.entrada-buscador.activa {
+  width: 180px;
+  opacity: 1;
+}
+
+.boton-hamburguesa {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-green);
+}
+
+/* HERO SLIDER (Diseño Original Recuperado) */
+.hero-slider {
+  position: relative;
+  height: 85vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.slide.active { opacity: 1; }
+
+.hero-slider-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* El título monumental limpio que acordamos */
+.titulo-monumental-limpio {
+  font-size: 6rem; 
+  line-height: 0.95;
+  margin-bottom: 30px;
+  color: #ffffff;
+  text-transform: none;
+  text-shadow: 0px 5px 15px rgba(0, 0, 0, 0.7); 
+}
+
+.hero-center-logo {
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.boton-accion-aislado {
+  background-color: var(--color-green);
+  color: #ffffff;
+  border: none;
+  padding: 15px 45px;
+  font-size: 1.6rem;
+  font-family: var(--font-main);
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* INTRO Y CARACTERÍSTICAS */
+.intro-section { padding: 80px 20px; text-align: center; }
+.intro-container { max-width: 900px; margin: 0 auto; }
+.intro-title { font-size: 2.5rem; text-transform: none; font-family: sans-serif; }
+
+.features-viewport {
+  position: relative;
+  min-height: 650px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 60px 40px;
+}
+
+.features-inner-container {
+  display: flex;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  gap: 60px;
+}
+
+.pill-menu { display: flex; flex-direction: column; gap: 15px; width: 320px; }
+.pill-item {
+  background: #000; color: #fff; border-radius: 50px;
+  padding: 16px 30px; font-family: var(--font-main); font-size: 1.3rem;
+  cursor: pointer; display: flex; justify-content: space-between;
+}
+.pill-item.active { background: #fff; color: #000; }
+
+.glass-feature-card {
+  background: rgba(56, 142, 60, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 30px; padding: 50px; color: white;
+}
+
+/* =========================================
+   CALCULADORA: ARQUITECTURA TÉCNICA
+   ========================================= */
+
+   .calc-section-wrapper {
+    padding: 100px 20px;
+    background-color: #ffffff;
+    text-align: center;
+  }
+  
+  .calc-main-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* El Panel Oscuro (Base del diseño) */
+  .calc-dark-panel {
+    background-color: #1a1a1a;
+    border: 2px solid #388e3c;
+    border-radius: 40px;
+    padding: 50px 40px;
+    width: 450px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Selector de tipo (Muro, Barra, Columna) */
+  .calc-type-selector {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 40px;
+    gap: 15px;
+  }
+  
+  .type-btn {
+    flex: 1;
+    background: transparent;
+    border: 2px solid #444;
+    padding: 15px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .type-btn.active {
+    border-color: #388e3c;
+    color: #388e3c;
+  }
+  
+  .type-btn span {
+    font-family: var(--font-main);
+    font-size: 0.8rem;
+    margin-top: 8px;
+    letter-spacing: 1px;
+  }
+  
+  /* Sliders y Burbujas */
+  .calc-sliders-container {
+    display: flex;
+    width: 100%;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .slider-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .slider-bubble {
+    background-color: #388e3c;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .custom-range {
+    width: 100%;
+    accent-color: #388e3c;
+    margin-bottom: 15px;
+    cursor: pointer;
+  }
+  
+  .slider-label {
+    color: white;
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+  
+  /* Resultados y Botón */
+  .calc-result-pill {
+    background-color: white;
+    color: black;
+    border-radius: 50px;
+    padding: 15px 30px;
+    font-family: var(--font-main);
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  
+  .calc-cta {
+    background-color: #388e3c;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 40px;
+    font-family: var(--font-main);
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+  }
+  
+  .calc-cta:hover {
+    background-color: #2e7d32;
+  }
+  
+  /* Imagen del Muro */
+  .calc-image-panel img {
+    max-width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+  }
+  
+  /* RESPONSIVO */
+  @media (max-width: 900px) {
+    .calc-main-layout { flex-direction: column; }
+    .calc-dark-panel { width: 100%; max-width: 400px; }
+  }
+
+/* PÁGINA: NOSOTROS (Zig-Zag Corregido) */
+.nosotros-pagina { width: 100%; }
+.nosotros-banner-verde { background-color: var(--color-green); padding: 60px 20px; text-align: center; }
+.nosotros-logo-centro { height: 80px; margin-bottom: 20px; }
+.nosotros-banner-texto { color: #fff; font-size: 1.5rem; max-width: 900px; margin: 0 auto; }
+
+.nosotros-zigzag-contenedor { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+.zigzag-fila { display: flex; flex-direction: column; align-items: center; gap: 40px; margin-bottom: 60px; }
+
+.zigzag-imagen img {
+  max-width: 550px; width: 100%; height: auto;
+  border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* PILARES DE VALORES (Tarjetas) */
+.nosotros-pilares-contenedor {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px; max-width: 1200px; margin: 0 auto; padding-bottom: 80px;
+}
+.pilar-tarjeta {
+  background: #fff; border-radius: 15px; padding: 30px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08); text-align: center;
+}
+.pilar-icono-caja { height: 70px; margin-bottom: 15px; display: flex; justify-content: center; }
+.pilar-icono-caja img { height: 100%; object-fit: contain; }
+
+/* FOOTER */
+.footer {
+  background-color: #050505; color: white; padding: 60px 40px;
+  border-top: 6px solid var(--color-green); position: relative;
+}
+.footer-container { display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; position: relative; z-index: 5; }
+.footer-links { list-style: none; padding: 0; }
+
+/* MEDIA QUERIES (TORNIQUETE MÓVIL) */
+@media (min-width: 900px) {
+  .zigzag-fila { flex-direction: row; }
+  .zigzag-fila.reversa { flex-direction: row-reverse; }
+  .zigzag-texto { flex: 1; padding: 0 40px; }
+  .zigzag-imagen { flex: 1; }
+}
+
+@media (max-width: 900px) {
+  .barra-navegacion { padding: 15px 20px; }
+  .enlaces-navegacion {
+    position: absolute; top: 100%; left: -100%; width: 100%;
+    background: #fff; flex-direction: column; padding: 20px; transition: 0.4s;
+  }
+  .enlaces-navegacion.activos { left: 0; }
+  .boton-hamburguesa { display: block; }
+  .titulo-monumental-limpio { font-size: 3rem; }
+  .features-inner-container, .calc-main-layout { flex-direction: column; align-items: center; }
+  .pill-menu, .calc-dark-panel { width: 100%; }
+}

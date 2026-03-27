@@ -40,48 +40,77 @@ const Nosotros = () => {
           </div>
           <div className="zigzag-imagen">
             {/* He corregido la ruta y extensión del archivo JPEG aquí */}
-            <img src="/muroderecamara.jpg" alt="Muro de recámara Bricko" />
+            <img src="/murorecamara.png" alt="Muro de recámara Bricko" />
           </div>
         </div>
 
       </section>
 
       <section className="nosotros-pilares-contenedor">
-        <div className="pilar-tarjeta">
-          <div className="pilar-icono">
-            <Leaf size={50} color="#388e3c" strokeWidth={1.5} />
-          </div>
-          <h4 className="pilar-subtitulo">Misión</h4>
-          <h2 className="pilar-titulo">TRANSFORMAR</h2>
-          <p className="pilar-texto">
-            Somos Bricko. Transformamos desechos de papel en arquitectura de vanguardia mediante ingeniería patentada.
-          </p>
-        </div>
+  
+  <div className="pilar-tarjeta">
+    <div className="pilar-icono-caja">
+      <img src="/honestidad.png" alt="Icono Honestidad" />
+    </div>
+    <h2 className="pilar-titulo-valor">HONESTIDAD</h2>
+    <p className="pilar-descripcion">
+      Transparencia total en nuestros procesos de fabricación y asesoría técnica.
+    </p>
+  </div>
 
-        <div className="pilar-tarjeta">
-          <div className="pilar-icono">
-            <TrendingUp size={50} color="#388e3c" strokeWidth={1.5} />
-          </div>
-          <h4 className="pilar-subtitulo">Visión</h4>
-          <h2 className="pilar-titulo">LIDERAR</h2>
-          <p className="pilar-texto">
-            Ser la referencia mundial en arquitectura sostenible, demostrando que la economía circular es el único camino viable para el futuro de la construcción.
-          </p>
-        </div>
+  <div className="pilar-tarjeta">
+    <div className="pilar-icono-caja">
+      <img src="/sostenibilidad.png" alt="Icono Sostenibilidad" />
+    </div>
+    <h2 className="pilar-titulo-valor">SOSTENIBILIDAD</h2>
+    <p className="pilar-descripcion">
+      Transformamos residuos en soluciones arquitectónicas.
+    </p>
+  </div>
 
-        <div className="pilar-tarjeta">
-          <div className="pilar-icono">
-            <Cuboid size={50} color="#388e3c" strokeWidth={1.5} />
-          </div>
-          <h4 className="pilar-subtitulo">Valores</h4>
-          <h2 className="pilar-titulo">INNOVAR</h2>
-          <p className="pilar-texto">
-            <strong>Innovación:</strong> Cuestionamos lo establecido.<br/><br/>
-            <strong>Sostenibilidad:</strong> El planeta es primero.<br/><br/>
-            <strong>Calidad:</strong> Seguridad sin compromisos.
-          </p>
-        </div>
-      </section>
+  <div className="pilar-tarjeta">
+    <div className="pilar-icono-caja">
+      <img src="/inovación.png" alt="Icono Innovación" />
+    </div>
+    <h2 className="pilar-titulo-valor">INNOVACIÓN</h2>
+    <p className="pilar-descripcion">
+      Redefinimos los límites de la construcción modular.
+    </p>
+  </div>
+
+  <div className="pilar-tarjeta">
+    <div className="pilar-icono-caja">
+      <img src="/responsabilidad.png" alt="Icono Responsabilidad" />
+    </div>
+    <h2 className="pilar-titulo-valor">RESPONSABILIDAD</h2>
+    <p className="pilar-descripcion">
+      Compromiso inquebrantable con el medio ambiente y la estabilidad estructural de tus proyectos.
+    </p>
+  </div>
+
+  <div className="pilar-tarjeta">
+    <div className="pilar-icono-caja">
+      <img src="/equipo.png" alt="Icono Trabajo en equipo" />
+    </div>
+    <h2 className="pilar-titulo-valor">TRABAJO EN EQUIPO</h2>
+    <p className="pilar-descripcion">
+      Sinergia perfecta entre ingeniería, diseño y las necesidades específicas de tu obra.
+    </p>
+  </div>
+
+  <div className="pilar-tarjeta">
+    <div className="pilar-icono-caja">
+      <img src="/confianza.png" alt="Icono Confianza" />
+    </div>
+    <h2 className="pilar-titulo-valor">CONFIANZA</h2>
+    <p className="pilar-descripcion">
+      Materiales rigurosamente probados que aseguran la durabilidad y seguridad de cada espacio.
+    </p>
+  </div>
+
+</section>
+
+
 
     </div>
   );
