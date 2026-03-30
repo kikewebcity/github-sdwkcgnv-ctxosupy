@@ -724,7 +724,64 @@ h4 {
     flex-direction: column;
   }
 }
+/* SOPORTE TÉCNICO Y FAQS (Final de Productos) */
+.soporte-tecnico-seccion {
+  padding: 100px 20px;
+  background-color: #ffffff;
+}
 
+.soporte-cabecera {
+  max-width: 1200px;
+  margin: 0 auto 50px auto;
+  border-bottom: 2px solid #388e3c;
+  padding-bottom: 20px;
+}
+
+.soporte-titulo {
+  font-family: var(--font-main);
+  font-size: 3rem;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.soporte-contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 40px;
+}
+
+.faq-tecnica {
+  padding: 25px;
+  border-left: 4px solid #eaeded;
+  transition: border-color 0.3s ease;
+}
+
+.faq-tecnica:hover {
+  border-left-color: #388e3c;
+}
+
+.faq-pregunta {
+  font-family: var(--font-main);
+  font-size: 1.8rem;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.faq-respuesta {
+  font-family: sans-serif;
+  font-size: 1.05rem;
+  color: #555555;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .soporte-contenedor {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* =========================================
    FOOTER
