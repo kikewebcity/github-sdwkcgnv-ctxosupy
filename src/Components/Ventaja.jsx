@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import NoticiasSustentables from './NoticiasSustentables';
 
 const Ventaja = () => {
   return (
@@ -72,6 +73,9 @@ const Ventaja = () => {
           </p>
         </div>
       </section>
+
+      <NoticiasSustentables />
+      
     </div>
   );
 };
