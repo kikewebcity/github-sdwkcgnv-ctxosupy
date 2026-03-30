@@ -8,6 +8,7 @@ import Nosotros from './Components/Nosotros';
 import Contacto from './Components/Contacto';
 import Inspiracion from './Components/Inspiracion';
 import Productos from './Components/Productos';
+import Ventaja from './Components/Ventaja';
 
 import { Search, ShoppingCart, Truck } from 'lucide-react';
 import logoWhite from './assets/logowhite.png';
@@ -98,7 +99,7 @@ function App() {
           if (vistaActual === 'aplicaciones') return <Inspiracion />;
           if (vistaActual === 'contacto') return <Contacto />;
           
-          if (vistaActual === 'ventaja') return <div style={{padding: '100px', textAlign: 'center'}}><h2>SECCIÓN VENTAJA EN DESARROLLO</h2></div>;
+          if (vistaActual === 'ventaja') return <Ventaja />;
           if (vistaActual === 'conoce-mas') return <div style={{padding: '100px', textAlign: 'center'}}><h2>SECCIÓN CONOCE MÁS EN DESARROLLO</h2></div>;
 
           return (
