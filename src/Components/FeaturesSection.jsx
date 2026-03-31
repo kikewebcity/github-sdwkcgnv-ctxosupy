@@ -1,79 +1,84 @@
 import React, { useState } from 'react';
+import { Sparkles, ShieldCheck, Hammer, VolumeX, Feather } from 'lucide-react';
+import '../App.css';
 
 const FeaturesSection = () => {
-  const [active, setActive] = useState(0);
+  const [activeFeature, setActiveFeature] = useState('limpia');
 
-  // La matriz purgada. Solo los datos crudos, sin distracciones visuales.
-  const features = [
+  const featuresData = [
     {
-      title: 'Instalación Limpia',
-      desc: 'Nuestro sistema constructivo permite un proceso seco, rápido y sin escombros, ideal para reformas de interiores.',
+      id: 'limpia',
+      label: 'Instalación Limpia',
+      icon: Sparkles,
+      title: 'INSTALACIÓN LIMPIA',
+      description:
+        'Nuestros bloques se ensamblan en seco, eliminando escombros y polvos nocivos en la obra. Es la solución ideal para remodelaciones rápidas y espacios que requieren máxima higiene.',
     },
     {
-      title: 'Seguridad Ignífuga',
-      desc: 'El ladrillo de celulosa Bricko es altamente resistente al fuego, proporcionando seguridad pasiva en tus construcciones.',
+      id: 'ignifuga',
+      label: 'Seguridad Ignífuga',
+      icon: ShieldCheck,
+      title: 'SEGURIDAD IGNÍFUGA',
+      description:
+        'La matriz de celulosa está tratada químicamente para resistir altas temperaturas y retardar la propagación de la llama. Proporciona una capa de seguridad pasiva crucial para escenografías y desarrollos habitacionales.',
     },
     {
-      title: 'Manejabilidad Total',
-      desc: 'Se corta, clava y atornilla con la misma facilidad que la madera, simplificando la instalación y los acabados.',
+      id: 'total',
+      label: 'Manejabilidad Total',
+      icon: Hammer,
+      title: 'MANEJABILIDAD TOTAL',
+      description:
+        'Se corta, clava y atornilla con la misma facilidad que la madera, simplificando la instalación y los acabados. No se requiere maquinaria pesada ni técnicos especializados.',
     },
     {
-      title: 'Aislamiento Acústico',
-      desc: 'Privacidad total. Su matriz fibrosa absorbe el ruido ambiental, ideal para oficinas y habitaciones.',
+      id: 'acustico',
+      label: 'Aislamiento Acústico',
+      icon: VolumeX,
+      title: 'AISLAMIENTO ACÚSTICO',
+      description:
+        'La alta densidad de los enlaces poliméricos en la matriz de celulosa actúa como un absorbedor de ondas sonoras, reduciendo la transmisión de ruido entre espacios y mejorando el confort ambiental.',
     },
     {
-      title: 'Ligereza Extrema',
-      desc: 'Reduce drásticamente la carga estructural y facilita el transporte, permitiendo construcciones mucho más ágiles.',
+      id: 'extrema',
+      label: 'Ligereza Extrema',
+      icon: Feather,
+      title: 'LIGEREZA EXTREMA',
+      description:
+        'Reduce drásticamente la carga estructural y facilita el transporte, permitiendo construcciones mucho más ágiles. Su bajo peso permite una logística eficiente y un manejo manual sin fatiga.',
     },
   ];
 
-  return (
-    <section
-      className="features-viewport"
-      // Aquí anclamos la textura inmutable.
-      // He puesto 'muro.png', pero puedes cambiarlo por la imagen de textura que prefieras.
-      style={{ backgroundImage: "url('/oficinap.jpg')" }}
-    >
-      <div className="features-overlay-dark"></div>
+  const currentFeature = featuresData.find((f) => f.id === activeFeature);
 
-      <div className="features-inner-container">
-        {/* Columna Izquierda: El Menú */}
-        <div className="pill-menu">
-          {features.map((f, i) => (
-            <button
-              key={i}
-              className={`pill-item ${active === i ? 'active' : ''}`}
-              onClick={() => setActive(i)}
+  return (
+    <section className="features-section">
+      <div className="features-main-grid">
+        {/* Columna Izquierda: Lista de Pills Interactivos */}
+        <div className="features-pills-col">
+          {featuresData.map((feature) => (
+            <div
+              key={feature.id}
+              className={`feature-pill ${
+                activeFeature === feature.id ? 'active' : ''
+              }`}
+              onClick={() => setActiveFeature(feature.id)}
             >
-              <span style={{ fontWeight: 'bold' }}>{f.title}</span>
-              <span
-                style={{
-                  color: active === i ? '#22c55e' : '#666',
-                  fontSize: '1.5rem',
-                }}
-              >
-                ⊕
+              <div className="pill-content-left">
+                {/* Renderizado dinámico del icono con Lucide-React */}
+                <feature.icon className="pill-icon" size={20} strokeWidth={2} />
+                <span className="pill-label">{feature.label}</span>
+              </div>
+              <span className="pill-action">
+                {activeFeature === feature.id ? '−' : '+'}
               </span>
-            </button>
+            </div>
           ))}
         </div>
 
-        {/* Columna Derecha: El Contenido */}
-        <div className="glass-feature-card">
-          <h2
-            style={{
-              fontSize: '3rem',
-              fontWeight: '900',
-              textTransform: 'uppercase',
-              marginBottom: '20px',
-              color: '#ffffff',
-            }}
-          >
-            {features[active].title}
-          </h2>
-          <p style={{ fontSize: '1.4rem', lineHeight: '1.6', margin: 0 }}>
-            {features[active].desc}
-          </p>
+        {/* Columna Derecha: Bloque de Contenido Dinámico con Color Institucional */}
+        <div className="features-content-col">
+          <h3 className="feature-title">{currentFeature.title}</h3>
+          <p className="feature-paragraph">{currentFeature.description}</p>
         </div>
       </div>
     </section>
