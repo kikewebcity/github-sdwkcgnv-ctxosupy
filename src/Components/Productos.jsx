@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import FaqsProductos from './FaqsProductos'; // Invocamos el módulo dinámico
 
 const Productos = () => {
   return (
@@ -109,74 +110,19 @@ const Productos = () => {
       {/* SECCIÓN 4: EXTENSIÓN DEL CATÁLOGO (DISEÑO Y ESCENOGRAFÍA) */}
       <section className="seccion-extension-diseno">
         <div className="extension-contenido">
-          <div className="extension-texto">
-            <h2 className="titulo-extension">LÍNEA DE DISEÑO Y ESCENOGRAFÍA</h2>
-            <p className="parrafo-extension">
-              La Tabla Base de 80 x 10 x 122 cm ofrece una densidad de 256 kg/m³
-              ideal para la manufactura de mobiliario sustentable como libreros
-              y mesas.
-            </p>
-            <p className="parrafo-extension">
-              En el ámbito escénico, la ligereza del material y su cualidad
-              ignífuga permiten crear sets de grabación y teatros seguros,
-              modulares y de montaje ultra rápido sin generar escombros en el
-              set.
-            </p>
-          </div>
-          <div className="extension-imagen">
-            <img src="/murorecamara.png" alt="Mobiliario Bricko" />
-          </div>
+          <h2 className="titulo-extension">LÍNEA DE DISEÑO Y ESCENOGRAFÍA</h2>
+          <p className="parrafo-extension">
+            La Tabla Base de 80 x 10 x 122 cm ofrece una densidad de 256 kg/m³
+            ideal para la manufactura de mobiliario sustentable como libreros y
+            mesas. En el ámbito escénico, la ligereza del material y su cualidad
+            ignífuga permiten crear sets de grabación y teatros seguros,
+            modulares y de montaje ultra rápido sin generar escombros en el set.
+          </p>
         </div>
       </section>
 
-      {/* SECCIÓN 5: SOPORTE TÉCNICO / FAQS (Al final de la página) */}
-      <section className="soporte-tecnico-seccion">
-        <div className="soporte-cabecera">
-          <h2 className="soporte-titulo">
-            ESPECIFICACIONES DE RENDIMIENTO Y MANTENIMIENTO
-          </h2>
-        </div>
-        <div className="soporte-contenedor">
-          <div className="faq-tecnica">
-            <h3 className="faq-pregunta">
-              1. ¿Cuál es el comportamiento del material ante la humedad?
-            </h3>
-            <p className="faq-respuesta">
-              Bricko está diseñado exclusivamente para muros divisorios en
-              interiores. El material debe mantenerse fuera del alcance de
-              lluvias y vientos fuertes, ya que la exposición directa al agua
-              compromete la integridad de la matriz de celulosa.
-            </p>
-          </div>
-          <div className="faq-tecnica">
-            <h3 className="faq-pregunta">2. ¿Es seguro en caso de incendio?</h3>
-            <p className="faq-respuesta">
-              Sí. El material posee una alta resistencia al fuego directo. Al
-              entrar en contacto con el calor extremo, se carboniza gradualmente
-              sin producir llama.
-            </p>
-          </div>
-          <div className="faq-tecnica">
-            <h3 className="faq-pregunta">
-              3. ¿Se requiere herramienta especializada para su instalación?
-            </h3>
-            <p className="faq-respuesta">
-              No. Las piezas pueden taladrarse, clavarse o fijarse con tornillos
-              convencionales, y el corte se realiza utilizando una segueta
-              manual.
-            </p>
-          </div>
-          <div className="faq-tecnica">
-            <h3 className="faq-pregunta">
-              4. ¿Qué tipo de acabados acepta la superficie?
-            </h3>
-            <p className="faq-respuesta">
-              La superficie plana de los paneles y bloques está lista para
-              recibir recubrimientos directos como pintura o pastas decorativas.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* SECCIÓN 5: SOPORTE TÉCNICO / FAQS UNIFICADO */}
+      <FaqsProductos />
     </div>
   );
 };
